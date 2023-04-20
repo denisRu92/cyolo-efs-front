@@ -16,7 +16,7 @@ describe("UploadFiles component", () => {
 
     test("should upload a file with 10 minute retention", async () => {
         const expectedUrl = "http://localhost:8080/v1/file";
-        const resultUrl ="http://localhost:8080/v1/file1_1681908880034307000.jpeg";
+        const resultUrl = "http://localhost:8080/v1/file1_1681908880034307000.jpeg";
         const file = new File(["file contents"], "filename.txt", {
             type: "text/plain",
         });
@@ -56,13 +56,13 @@ describe("UploadFiles component", () => {
             headers: expectedHeaders
         });
 
-      expect(screen.getByText("Here's your shareable URL:")).toBeInTheDocument();
-      expect(screen.getByDisplayValue(resultUrl)).toBeInTheDocument();
+        expect(screen.getByText("Here's your shareable URL:")).toBeInTheDocument();
+        expect(screen.getByDisplayValue(resultUrl)).toBeInTheDocument();
     });
 
     test("should upload a file with 1 minute default retention", async () => {
         const expectedUrl = "http://localhost:8080/v1/file";
-        const resultUrl ="http://localhost:8080/v1/file1_1681908880034307000.jpeg";
+        const resultUrl = "http://localhost:8080/v1/file1_1681908880034307000.jpeg";
         const file = new File(["file contents"], "filename.txt", {
             type: "text/plain",
         });
@@ -98,8 +98,8 @@ describe("UploadFiles component", () => {
             headers: expectedHeaders
         });
 
-      expect(screen.getByText("Here's your shareable URL:")).toBeInTheDocument();
-      expect(screen.getByDisplayValue(resultUrl)).toBeInTheDocument();
+        expect(screen.getByText("Here's your shareable URL:")).toBeInTheDocument();
+        expect(screen.getByDisplayValue(resultUrl)).toBeInTheDocument();
     });
 
     test("should display error message if file upload fails", async () => {
