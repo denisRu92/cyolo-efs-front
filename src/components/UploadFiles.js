@@ -8,6 +8,7 @@ function UploadFiles() {
     const [file, setFile] = useState(null);
     const [retentionTime, setRetentionTime] = useState("");
     const [modalIsOpen, setModalIsOpen] = useState(false);
+    const [copied, setCopied] = useState(false);
     const [sharableURL, setSharableURL] = useState("");
     const [errorMessage, setErrorMessage] = useState("");
 
@@ -43,12 +44,14 @@ function UploadFiles() {
         }
     };
 
-    const copyToClipboard = () => {
-        navigator.clipboard.writeText(sharableURL);
+    const copyToClipboard = async () => {
+        await navigator.clipboard.writeText(sharableURL);
+        setCopied(true);
     };
 
     const clearFile = () => {
         setModalIsOpen(false);
+        setCopied(false);
         setSharableURL("");
         setRetentionTime("");
         setFile(null);
@@ -101,7 +104,7 @@ function UploadFiles() {
                     <h3>Here's your shareable URL:</h3>
                     <input type="text" value={sharableURL} readOnly/>
                     <button className="btn btn-success" onClick={copyToClipboard}>
-                        Copy to clipboard
+                        {copied ? 'Copied!' : 'Copy to clipboard'}
                     </button>
                 </div>
             </Modal>
