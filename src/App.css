@@ -1,38 +1,71 @@
-.App {
+.dropzone {
+  text-align: center;
+  padding: 30px;
+  border: 3px dashed #eeeeee;
+  background-color: #fafafa;
+  color: #bdbdbd;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.central {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.selected-file {
+  color: #000; 
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.modal-content {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 9999;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.modal-container {
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.modal-container label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal-container input[type="text"],
+.modal-container input[type="number"]{
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px;
+}
+
+.data-container {
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.data-container label {
+  display: inline-block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.data-container input[type="text"],
+.data-container input[type="number"]{
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px;
 }
